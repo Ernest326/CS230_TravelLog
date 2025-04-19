@@ -1,0 +1,23 @@
+{
+  "name": "cs230_lab5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lerna run dev --stream",
+    "build": "lerna run build --stream",
+    "lint": "lerna run lint --stream",
+    "test": "lerna run test --stream",
+    "backend": "lerna run backend --stream"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@mui/icons-material": "^7.0.2",
+    "lerna": "^8.2.2"
+  }
+}
