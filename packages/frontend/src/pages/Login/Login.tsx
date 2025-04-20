@@ -12,7 +12,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
-    const [user, setUser] = useState({username: '', password: '', email: '', address: ''});
+    const [user, setUser] = useState({username: '', password: '', email: '', address: '', travels: [], journeys: []});
     const [updatingUser, setUpdatingUser] = useState(false);
 
     const fetchUserInfo = (id : number) => {

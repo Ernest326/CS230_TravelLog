@@ -18,8 +18,8 @@ exports.getAllJourneys = async (req, res) => {
 
 exports.createJourney = async (req, res) => {
     console.log("Create journey request received:", req.body);
-    const { user_id, name, start_date, end_date, activities, description } = req.body;
-    db.query(`INSERT INTO JOURNEY_PLAN (user_id, name, start_date, end_date, activities, description) VALUES (${user_id}, '${name}', '${start_date}', '${end_date}', '${activities}', '${description}')`, (err, results) => {
+    const { user_id, name, locations, start_date, end_date, activities, description } = req.body;
+    db.query(`INSERT INTO JOURNEY_PLAN (user_id, name, locations, start_date, end_date, activities, description) VALUES (${user_id}, '${name}', '${locations}', '${start_date}', '${end_date}', '${activities}', '${description}')`, (err, results) => {
         if(err) {
             console.error("Database error:", err);
             return res.status(500).json({ error: "Database error" });
@@ -49,8 +49,8 @@ exports.getJourney = async (req, res) => {
 exports.updateJourney = async (req, res) => {
     console.log("Update journey request received:", req.params, req.body);
     const { id } = req.params;
-    const { user_id, name, start_date, end_date, activities, description } = req.body;
-    db.query(`UPDATE JOURNEY_PLAN SET user_id = ${user_id}, name='${name}', start_date='${start_date}', end_date='${end_date}', activities='${activities}', description='${description}' WHERE id = ${id}`, (err, results) => {
+    const { user_id, name, locations, start_date, end_date, activities, description } = req.body;
+    db.query(`UPDATE JOURNEY_PLAN SET user_id = ${user_id}, name='${name}', locations='${locations}', start_date='${start_date}', end_date='${end_date}', activities='${activities}', description='${description}' WHERE id = ${id}`, (err, results) => {
         if(err) {
             console.error("Database error:", err);
             return res.status(500).json({ error: "Database error" });

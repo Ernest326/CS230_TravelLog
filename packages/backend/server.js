@@ -6,6 +6,7 @@ server.use(cors({
     origin: 'http://localhost:5173'
 }));
 server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
 server.use('/user', require('./routes/userRouter.js'));
 server.use('/travel', require('./routes/travelRouter.js'));
